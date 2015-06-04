@@ -1,6 +1,5 @@
 $(document).ready(function(){
 	console.log('hello world!');
-	console.log('yes');
 });;/*!
  * Bootstrap v3.3.1 (http://getbootstrap.com)
  * Copyright 2011-2014 Twitter, Inc.

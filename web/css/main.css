@@ -8,3 +8,6 @@ body a {
 body p {
   margin: 0;
 }
+body span {
+  font-size: 11px;
+}

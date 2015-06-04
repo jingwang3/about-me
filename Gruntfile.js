@@ -7,8 +7,8 @@ module.exports = function(grunt) {
         separator: ';'
       },
       dist: {
-        src: ['js/**/*.js'],
-        dest: 'dist/<%= pkg.name %>.js'
+        src: ['web/js/**/*.js'],
+        dest: 'web/dist/<%= pkg.name %>.js'
       }
     },
     uglify: {
@@ -17,7 +17,7 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          'dist/main.min.js': ['<%= concat.dist.dest %>']
+          'web/dist/main.min.js': ['<%= concat.dist.dest %>']
         }
       }
     },
@@ -42,7 +42,7 @@ module.exports = function(grunt) {
           style: 'expanded'
         },
         files: {                         // Dictionary of files
-          'css/main.css': 'sass/main.scss'       // 'destination': 'source'
+          'web/css/main.css': 'sass/main.scss'       // 'destination': 'source'
         }
       }
     },
@@ -51,18 +51,18 @@ module.exports = function(grunt) {
         browsers: ['last 2 versions', 'ie 8', 'ie 9']
       },
       main: {
-        src: 'css/main.css',
-        dest: 'css/main.css'
+        src: 'web/css/main.css',
+        dest: 'web/css/main.css'
       },
     },
     watch: {
       jshint: {
-        files: ['<%= jshint.files %>', 'js/main.js'],
+        files: ['<%= jshint.files %>', 'web/js/main.js'],
         tasks: ['jshint']     
       },
       sass: {
-        files: ['sass/*.scss'],
-        tasks: ['sass:dist', 'autoprefixer', 'cssmin']     
+        files: ['sass/main.scss'],
+        tasks: ['sass', 'autoprefixer', 'cssmin']     
       }
     },
     cssmin: {
@@ -72,7 +72,7 @@ module.exports = function(grunt) {
       },
       target: {
         files: {
-          'css/main.min.css': ['css/main.css']
+          'web/css/main.min.css': ['web/css/main.css']
         }
       }
     }
