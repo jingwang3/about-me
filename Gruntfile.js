@@ -7,8 +7,8 @@ module.exports = function(grunt) {
         separator: ';'
       },
       dist: {
-        src: ['web/js/**/*.js'],
-        dest: 'web/dist/<%= pkg.name %>.js'
+        src: ['web/js/*.js'],
+        dest: 'web/dist/main.js'
       }
     },
     uglify: {
@@ -57,8 +57,8 @@ module.exports = function(grunt) {
     },
     watch: {
       jshint: {
-        files: ['<%= jshint.files %>', 'web/js/main.js'],
-        tasks: ['jshint']     
+        files: ['<%= jshint.files %>', 'web/js/**/*.js'],
+        tasks: ['jshint', 'concat', 'uglify']     
       },
       sass: {
         files: ['sass/main.scss'],
